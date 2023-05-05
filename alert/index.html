@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+  <div class="alert-box">Alert 박스</div>
+  <button onclick="onPopupOpen()">열기</button>
+  <button onclick="onPopupClose()">닫기</button>
+  <script>
+    function onPopupOpen() {
+      document.querySelector('.alert-box').style.display = 'block';
+    }
+    function onPopupClose() {
+      document.querySelector('.alert-box').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
