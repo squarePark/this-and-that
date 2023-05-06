@@ -5,3 +5,8 @@
   border-radius: 5px;
   display: none;
 }
+
+#backgroundOutput {
+  width: 200px;
+  height: 200px;
+}

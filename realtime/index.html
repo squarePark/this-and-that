@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>실시간 입력해보기 배경색 바꿔보기</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="main.js"></script>
+</head>
+<body>
+<label for="input">입력된 값이 실시간으로 표시 됩니다.</label>
+<input type="text" id="input" oninput="showInput()">
+<p id="output"></p>
+
+<label for="backgroundInput">입력된 값이 홀 수 일 경우 배경색이 회색으로 변경 됩니다.</label>
+<input type="text" id="backgroundInput" oninput="showBackground()">
+<div id="backgroundOutput"></div>
+<script>
+  // 자바스크립트로 실시간 입력 내용 표시하기
+  function showInput() {
+    document.getElementById('output').textContent = document.getElementById('input').value;
+  }
+
+  // 자바스크립트로 배경색 바꾸기
+  function showBackground() {
+    const number = document.getElementById('backgroundInput').value;
+    document.getElementById('backgroundOutput').style.backgroundColor = number % 2 === 0 ? 'gray' : 'red';
+  }
+</script>
+</body>
+</html>
