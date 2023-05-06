@@ -9,13 +9,17 @@
 
   <div class="alert-box">
     <p>Alert 박스</p>
-    <button onclick="onPopupOpen('none')">닫기</button>
+    <button id="close">닫기</button>
   </div>
   <button onclick="onPopupOpen('block')">열기</button>
   <script>
     function onPopupOpen(hole) {
       document.querySelector('.alert-box').style.display = hole;
     }
+
+    document.getElementById('close').addEventListener('click', () => {
+      document.querySelector('.alert-box').style.display = 'none';
+    });
   </script>
 </body>
 </html>
