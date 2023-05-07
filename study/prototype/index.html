@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prototype 은 무엇인가</title>
+</head>
+<body>
+  <script>
+    function GeneratorObj() {
+      this.q = 'strike';
+      this.w = 'snowball';
+    }
+
+    // GeneratorObj 의 유전자
+    // 유전자를 주입 했으니 test 는 그 부모의 유전자를 상속 받는다.
+    GeneratorObj.prototype.name = 'Park';
+
+    // test 는 자식이고 GeneratorObj는 부모이다.
+    const test = new GeneratorObj();
+
+    // 출력하면 test 자체에는 name 이라는 키 정보는 없지만
+    console.log(test);
+    // test의 name 을 찍어보면 있음
+    // 왜냐하면, 부모가 name 이라는 유전자를 주입했고 자식은 유전자를 상속 받아
+    // 부모의 유전자를 가져올 수 있기 때문에 name 을 가져올 수 있으셈
+    console.log(test.name);
+
+    // 왜 이런 특성이 있는 걸까? (원리) 그냥 원래 이런 거임
+    // 컴퓨터는 test name 이 없기 때문에 부모의 유전자를 뒤져서 있는지 없는지 찾아낸다. 엄마 아빠 없을 때까지 계속
+    // 끊임 없이 찾아내려고 하는 이걸 prototype chain 이라고 함 (내부적인 동작임)
+
+    const arr = [4, 2, 1];
+    arr.sort(); // 추가해 준적 없는 sort
+
+    // new Array(4, 2, 1) 위 구문을 컴퓨터는 해석함
+    // 따라서 뒤 구문과 아래 구문은 동일한 것
+    // new Array 는 sort 라는 기본 함수가 new Array 에 유전자로 가지고 있기 떄문
+    // 그래서 MDN Web Docs 에 sort 함수를 찾아보면
+    // Array.prototype.sort() 라고 확인을 할 수 있음
+
+    // 응용하기
+    // 최고의 부모 Array 에 aaa 라는 함수를 추가한다.
+    Array.prototype.aaa = function () {
+      console.log('나는 aaa 이다.');
+    }
+    // 이렇게 쓸 수 있음!!!!!!!
+    const arr2 = [2, 3, 1];
+    arr2.aaa();
+  </script>
+</body>
+</html>
