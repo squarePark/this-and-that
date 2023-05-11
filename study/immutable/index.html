@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Immutable</title>
+</head>
+<body>
+  <script>
+    // 객체의 불변성을 유지 - 객체가 생성된 후 그 상태를 변경할 수 없음을 의미
+    // 함수형 프로그래밍의 중요한 원칙중 하나이며, 예측 가능하고 안정적인 코드를 작성하는데 도움이 된당.
+    // 객체를 임의로 변경하게 된다면, 여러 곳에서 참조하고 있다 가정하면 예기치 못한 부작용을 초래할 수 있다.
+    const person = {
+      name: 'park',
+      age: 35,
+    };
+
+    const update = {
+      ...person,
+      age: 33,
+    };
+
+    console.log(person);
+    console.log(update);
+  </script>
+</body>
+</html>
