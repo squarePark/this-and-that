@@ -25,6 +25,17 @@
     const strArr = ['a', 'b', 'c', 'd', 'e'];
     const sum3 = numbers.reduce((acc, curr) => acc + curr, '');
     console.log(sum3);
+
+    // flatMap 예제를 복기해 보셈
+    const strList = ['Hello, world!', 'How are you?', 'I am fine.'];
+    const result = strList.flatMap(sen => sen.split(' '));
+    console.log(result);
+
+    // flatMap 평탄화를 활용해 보셈
+    const numberList = [1, [2, [3, 4], 5], 6]; // 중첩된 배열
+    const flatMapTest = numberList.flatMap(item => Array.isArray(item) ? item.flat() : item);
+    console.log(flatMapTest);
+
   </script>
 </body>
 </html>
