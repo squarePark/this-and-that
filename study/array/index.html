@@ -36,6 +36,19 @@
     const flatMapTest = numberList.flatMap(item => Array.isArray(item) ? item.flat() : item);
     console.log(flatMapTest);
 
+    // array 를 정렬하고 큰 수, 작은 수  순서대로 넣어 보기 
+    const unsorted = [-1, 1, 2, 3, 5];
+    // 오름차순 정렬
+    const sort = unsorted.sort((a, b) => a - b);
+    const resultSort = [];
+    while (sort.length) {
+      const large = sort.pop();
+      const small = sort.shift();
+
+      result.push(resultSort, resultSort);
+    }
+    console.log(resultSort);
+
   </script>
 </body>
 </html>
