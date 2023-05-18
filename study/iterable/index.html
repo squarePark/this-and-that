@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Generator Function</title>
+</head>
+<body>
+  <script>
+    // 반복 가능한 객체와 반복을 제어하는 객체
+    // ES6부터 도입된 개념이며, 반복 작읍을 위한 표준 인터페이스를 제공한다.
+    // 1. 이터러블
+    // 이터러블은 Symbol.iterator 메서드를 가지고 있는 객체이다.
+    // 이 메서드는 이터레이터 객체를 반환하는 함수로, 이터러블의 반복을 제어 한다.
+    // 배열, 문자열, 맵, 셋 등은 내장된 이터러블 객체이다.
+    const iterable = [1, 2, 3];
+    console.log(typeof iterable[Symbol.iterator]);
+
+    // 2. 이터레이터
+    // 이터레이터는 next() 메서드를 가지고 있는 겍체이다. next() 메서드는 반복되는 값들을 가진 객체를 변환한다.
+    // 이 메서드는 value, done 두개의 속성을 가진 객체를 반환하다. value는 현재 반복되는 값이고
+    // done은 반복이 완료되었는지를 나타내는 불리언 값이다.
+    const iterator = iterable[Symbol.iterator]();
+    console.log(iterable.next());
+    console.log(iterable.next());
+    console.log(iterable.next());
+    console.log(iterable.next());
+
+    // 3. for ... fo 루프
+    // 이터러블 객체의 값을 반복적으로 처리하는데 사용된다. 이터러블 객체를 순회하면서 반복 작업을 수행할 수 있다.
+    for (const item of iterable) {
+      console.log(item);
+    }
+
+    // 이건 좀 더 공부가 필요함 ㅠ_ㅠ...
+  </script>
+</body>
+</html>
